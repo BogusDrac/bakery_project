@@ -82,10 +82,10 @@ const HomeComp = () => {
     <div className="bg-gradient-to-br from-pink-50 via-pink-100 to-pink-200 min-h-screen py-10">
       <div className="container mx-auto px-6 lg:px-16">        
         {/* Eco-Friendly Section */}
-        <div className="bg-white p-6 rounded-lg shadow-lg text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-700 mb-4">Bring Your Own Empty Container</h2>
-          <p className="text-gray-500 flex items-center justify-center gap-2">
-            <Recycle className="text-green-500" /> Help the environment by reusing your containers!
+        <div className="bg-white p-6 rounded-lg shadow-lg text-center mb-8 font-quicksand">
+          <h2 className="text-2xl font-bold text-gray-700 mb-4 select-none">Bring Your Own Empty Container</h2>
+          <p className="text-gray-500 flex items-center justify-center gap-2 font-lora select-none">
+            <Recycle className="text-green-500 h-7" /> Help the environment by reusing your containers!
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const HomeComp = () => {
 
           {/* Filter */}
           <select
-            className="p-2 rounded-lg bg-white shadow-lg"
+            className="p-2 rounded-lg bg-white shadow-lg font-lora select-none"
             value={filterCategory}
             onChange={(e) => setFilterCategory(e.target.value)}
           >
@@ -121,16 +121,16 @@ const HomeComp = () => {
             <div key={product.id} className={`bg-white p-6 rounded-lg shadow-lg text-center transition transform hover:scale-105 ${!product.inStock ? 'opacity-50' : ''}`}>
               {!product.inStock && (
                 <div className="absolute inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center rounded-lg">
-                  <span className="text-white font-bold text-lg">Out of Stock</span>
+                  <span className="text-white font-bold text-lg select-none">Out of Stock</span>
                 </div>
               )}
-              <h2 className="text-2xl font-semibold text-gray-700">{product.name}</h2>
-              <p className="text-gray-500">{product.description}</p>
-              <p className="text-pink-600 font-bold text-lg">R{product.price}</p>
+              <h2 className="text-2xl font-semibold text-gray-700 font-quicksand select-none">{product.name}</h2>
+              <p className=" mt-3 text-gray-500 font-lora select-none">{product.description}</p>
+              <p className="text-pink-600 font-bold text-lg font-mono leading-loose select-none">R{product.price}</p>
               {product.inStock && (
                 <button
                   onClick={() => shareViaWhatsApp(product.whatsappMessage)}
-                  className="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600 transition"
+                  className="bg-green-500 shadow-xl text-white font-cookie text-2xl px-4 py-2 rounded mt-4 hover:bg-green-600 transition select-none"
                 >
                   Order on WhatsApp
                 </button>
