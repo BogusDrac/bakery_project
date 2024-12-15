@@ -97,7 +97,7 @@ const CustomerReviews = () => {
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md font-lora"
+            className="w-full px-3 py-2 border-none rounded-md font-lora"
           />
           <textarea
             placeholder="Write your comment..."
